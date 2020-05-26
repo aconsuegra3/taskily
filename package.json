@@ -4,6 +4,7 @@
   "description": "Gestor de proyectos, tareas y asignaciones",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon ./index.js",
     "start": "node ./index.js"
   },
   "repository": {
@@ -22,6 +23,9 @@
   },
   "homepage": "https://github.com/aconsuegra3/taskily#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1"    
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
