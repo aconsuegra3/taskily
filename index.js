@@ -7,6 +7,7 @@ const routes = require("./routes");
 const app = express();
 
 // Indicarle a express dónde están las rutas del servidor
+// res es lo que va a responder el servidor, next es una funcion especial de express 
 app.use("/", routes());
 
 // Inicializar el servidor en un puerto específico, normalmente se usa 3000 pero puede ser cualquiera
