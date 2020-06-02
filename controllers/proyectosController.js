@@ -1,7 +1,12 @@
+// Importar los modelos necesarios
+const Proyecto = require("../models/Proyecto");
+
+// Muestra todos los proyectos del usuario
 exports.home = (req, res, next) => {
-    res.send("Bienvenido");
+  res.render("crear_proyecto");
 };
 
-exports.holaMundo = (req, res, next) => {
-    res.send("¡Hola Mundo!");
+// Permite la creación de un nuevo proyecto
+exports.nuevoProyecto = (req, res, next) => {
+  res.send("Aqui se crea un nuevo proyecto");
 };

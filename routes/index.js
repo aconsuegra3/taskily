@@ -6,10 +6,10 @@ const routes = express.Router();
 const proyectosController = require("../controllers/proyectosController");
 
 // Construir las rutas disponibles para el servidor
-// Las rutas deben exportarse para poder ser utilizados en otros archivos
-module.exports = function() {
-    routes.get('/', proyectosController.home);
-    routes.get("/holamundo", proyectosController.holaMundo);
+// Las rutas deben exportarse para poder ser utilizadas en otros archivos
+module.exports = function () {
+  routes.get("/", proyectosController.home);  
 
-    return routes;
+  routes.post("/nuevo_proyecto", proyectosController.nuevoProyecto);
+  return routes;
 };
