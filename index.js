@@ -2,6 +2,11 @@
 const express = require("express");
 // Importar Handlebars
 const exphbs = require("express-handlebars");
+
+// Importar body parser que nos permite acceder al cuerpo de la
+// peticion HTTP
+const bodyParser = require("./n")
+
 // Importar todas las rutas disponibles
 const routes = require("./routes");
 
@@ -31,6 +36,9 @@ app.engine(
 );
 
 app.set("view engine", "hbs");
+
+// Habilitatr bodyParser para leer los datos enviados por POST
+app.use(bodyParser.urlencoded);
 
 // Indicarle a express dónde están las rutas del servidor
 app.use("/", routes());
