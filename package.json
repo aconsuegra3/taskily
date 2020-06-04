@@ -34,7 +34,8 @@
     "promises": "^0.2.5",
     "sequelize": "^5.21.11",
     "shortid": "^2.2.15",
-    "slug": "^3.3.0"
+    "slug": "^3.3.0",
+    "urlencoder": "^0.1.0"
   },
   "devDependencies": {
     "node-env-run": "^3.0.2",

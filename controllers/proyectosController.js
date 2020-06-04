@@ -19,10 +19,10 @@ exports.nuevoProyecto = (req, res, next) => {
   // Verificar si el nombre del proyecto tiene un valor
   if(!nombre){
     errores.push({error: 'El nombre del proyecto no puede estar vacío'});
-    res.send("Debes asignar nombre al proyecto!");
+    //res.send("Debes asignar nombre al proyecto!");
   }
   // else {
-    //res.send('Proyecto almacenado correctamente. la suma es: ' , ${Number(numeroUno) + Number(numeroDos)});
+    // res.send(`Proyecto almacenado correctamente. la suma es:  , ${Number(numeroUno) + Number(numeroDos)}`);
     // res.send("Proyecto almacenado correctamente");
   // }
   if(errores.length){
