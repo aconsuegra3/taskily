@@ -4,6 +4,7 @@ const routes = express.Router();
 
 // Importar los controladores
 const proyectosController = require("../controllers/proyectosController");
+const usuariosController = require("../controllers/usuariosController");
 
 // Construir las rutas disponibles para el servidor
 // Las rutas deben exportarse para poder ser utilizadas en otros archivos
@@ -15,6 +16,14 @@ module.exports = function () {
   routes.post("/nuevo_proyecto", proyectosController.nuevoProyecto);
 
   routes.get("/nuevo_proyecto", proyectosController.formularioNuevoProyecto);
+
+  // Rutas para autenticación
+
+  routes.get("/registrate", usuariosController.formularioCrearCuenta);
+
+  routes.post("/registrate", usuariosController.crearCuenta)
+
+  // routes.get()
 
   return routes;
 };
