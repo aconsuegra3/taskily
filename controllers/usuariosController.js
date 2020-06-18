@@ -19,10 +19,14 @@ exports.crearCuenta = async (req, res, next) => {
         });
 
         // Redireccionar el usuario al formulario de inicio de sesión
-        res.render("iniciar_sesion", { layout: "auth" });
+        res.redirect("iniciar_sesion");
     } catch(error){
         res.render("registrarse", {layout: "auth" }, {
             error
         });
     }
+};
+
+exports.formularioIniciarSesion = (req, res, next) => {
+    res.render("iniciar_sesion", { layout: "auth" });
 };
