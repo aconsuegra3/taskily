@@ -12,3 +12,20 @@ exports.autenticarUsuario = passport.authenticate("local", {
   failureRedirect: "/iniciar_sesion",
   badRequestMessage: "Debes ingresar tu correo electrónico y tu contraseña",
 });
+
+exports.cerrarSesion = (req, res, next) => {
+  // Al cerrar sesión redirigimos al usuario al inicio de sesión
+  req.session.destroy(() => {
+    res.redirect("/iniciar_sesion");
+  });
+};
+
+exports.usuarioAutenticado = (req, res, next) => {
+  // Si el usario está autenticado que contiene con la petición
+  if (req.isAuthenticated()){
+    return next();
+  }
+
+  // Si el usuario no está autenticado, iniciar sesión
+  return res.redirect("/iniciar_sesion");
+};
