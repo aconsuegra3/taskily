@@ -1,0 +1,44 @@
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Tus proyectos</h1>
+  <p class="lead">Aqui puedes encontrar todos los proyectos que has creado</p>
+</div>
+
+{{!-- Mostrar los mensajes en caso de existir --}}
+{{#if mensajes}}
+  {{#each mensajes}}
+    <div class="alert {{type}}" role="alert">
+      {{error}}
+    </div>
+  {{/each}}
+{{/if}}
+
+
+<div class="container">
+    <div class="card-deck mb-3 text-center">
+        {{!-- Mostrar los proyectos (si existen) --}}
+        {{#if proyectos}}
+            {{#each proyectos}}
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h3 class="font-weight-normal">{{dataValues.nombre}}</h3>
+                    </div>            
+                    <div class="card-body">
+                        <p class="card-title">{{dataValues.descripcion}}</p>
+                        <p class="card-text">{{dataValues.fecha}}</p>
+                        <a href="#" class="btn btn-primary">Ver proyecto</a>
+                    </div>
+                </div>
+            {{/each}}
+        {{else}}
+        <div class="container text-center">
+          <h4>Aún no tienes ningún proyecto. ¡Anímate a crear uno!</h4>
+        </div>
+        
+        {{!-- <a href="/nuevo_proyecto" class="btn btn-primary btn-lg">Crear un proyecto</a> --}}
+        {{/if}}
+    </div>
+</div>
+
+<div class="container mt-5 mb-5 text-center">
+    <a href="/nuevo_proyecto" class="btn btn-primary btn-lg">Crear un proyecto</a>
+</div>
